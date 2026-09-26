@@ -1,0 +1,8 @@
+torch>=2.0.0
+numpy>=1.26.0
+transformers>=4.40
+accelerate
+Pillow
+tqdm
+scikit-learn
+qwen-vl-utils
