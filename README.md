@@ -48,6 +48,10 @@ evaluation is CPU-only from cached activations).
 pip install -r requirements.txt
 ```
 
+`llava` and `decord` are **optional**: the code lazy-loads them and this work only
+uses the `qwen2.5_vl` model path; install them only if you want the LLaVA-OneVision
+or video variants of the upstream SAVs codebase.
+
 ## Data
 
 FAST candidate images are subject to the survey's data policy; requests for the
