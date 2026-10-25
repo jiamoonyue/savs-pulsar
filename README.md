@@ -72,7 +72,7 @@ symlink (`ln -s /your/data/root /SAVS_DATA_ROOT`) or batch-replace the prefix.
 |---|---|
 | Table 3 (headline results) | `python scripts/run_regionaware.py --data region_gpps --k 50 --num_heads 40 ...` |
 | Table 4 (ablation) | `python paper_rep/ablation_region.py` |
-| Table 5 (k × N grid) | `python scripts/offline_kh_sweep.py ...` |
+| Table 5 (k × N grid) | tabulated values come from the pipeline; `python scripts/offline_kh_sweep.py ...` reproduces the same grid offline, differing by up to 0.03 in F1 |
 | LOO head scoring | `python scripts/offline_kh_sweep.py --mode loo ...` |
 | Table 6 + Figure 8 (held-out stream) | `python paper_rep/heldout_metrics.py` |
 | Failure-mode analysis | `python paper_rep/failure_modes.py` |
