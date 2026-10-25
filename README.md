@@ -1,7 +1,8 @@
 # Region-aware training-free few-shot classification of pulsar candidates
 
 Code for the paper *"Few Labels Suffice: Region-Aware Training-Free Few-Shot
-Classification of Pulsar Candidates"* (submitted to A&A Supplement Series).
+Classification of Pulsar Candidates"* (submitted to The Astrophysical Journal
+Supplement Series).
 
 A vetting filter for radio pulsar candidates that keeps a vision-language model
 (Qwen2.5-VL-7B) frozen end to end: no gradient step, no fine-tuning, no parameter
@@ -9,12 +10,12 @@ update. It decomposes each diagnostic plot into its four physical panels
 (frequency–phase, time–phase, DM curve, pulse profile), scores every attention
 head independently on each panel against a support set of 10–100 labeled images,
 selects heads on that per-panel evidence, and classifies by vote. On a held-out
-stream of 8,611 FAST candidates the deployed filter removes 77% of the stream at
-the default operating point, and 67% at 90% pulsar recall.
+stream of 8,611 FAST candidates the deployed filter routes 77% of the stream to the
+interference class at the zero vote margin, and 67% at 90% pulsar recall.
 
 The method builds on [SAVs](https://github.com/chancharikmitra/SAVS) (Mitra et
-al., 2024); the region-aware panel decomposition, per-panel head scoring, and
-coverage-constrained selection introduced here are the contribution of this work.
+al., 2024); the region-aware panel decomposition and per-panel head scoring introduced here
+are the contribution of this work.
 
 ## Repository layout
 
@@ -71,10 +72,10 @@ symlink (`ln -s /your/data/root /SAVS_DATA_ROOT`) or batch-replace the prefix.
 | Paper artifact | Command |
 |---|---|
 | Table 3 (headline results) | `python scripts/run_regionaware.py --data region_gpps --k 50 --num_heads 40 ...` |
-| Table 4 (k × N grid) | `python scripts/offline_kh_sweep.py ...` |
-| Table 6 (ablation) | `python paper_rep/ablation_region.py` |
+| Table 4 (ablation) | `python paper_rep/ablation_region.py` |
+| Table 5 (k × N grid) | `python scripts/offline_kh_sweep.py ...` |
 | LOO head scoring | `python scripts/offline_kh_sweep.py --mode loo ...` |
-| Table 7 + Figure 8 (held-out stream) | `python paper_rep/heldout_metrics.py` |
+| Table 6 + Figure 8 (held-out stream) | `python paper_rep/heldout_metrics.py` |
 | Failure-mode analysis | `python paper_rep/failure_modes.py` |
 | Split audit | `python paper_rep/audit_leak.py` |
 
