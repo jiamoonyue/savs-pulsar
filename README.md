@@ -36,7 +36,6 @@ config/
   panel_crop_coordinates.json   panel cropping geometry for FAST prepfold plots
 paper_rep/              paper-specific analyses (ablation, failure modes,
                         held-out stream metrics, split audit)
-RESULTS.md              full result tables
 ```
 
 ## Requirements
